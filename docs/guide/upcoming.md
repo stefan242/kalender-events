@@ -6,7 +6,11 @@
 As of the events node, its checked on input or cronjob. The msg.payload contains a list of upcoming events.
 ##### Configuration
 
+
 -   "Check every": how often the calendar is checked for new events
+-   "Cron": Similar to "Check every", but much more configurable. It's a cron expression, how often the calendar is checked for new upcoming events. If Cron is defined, it wins against "Check every". <i>Empty value to disable.</i>
+-   any signal to the input of the node (for example an inject node) will trigger a check for new events.
+-   
 -   "Trigger": possible values:
 
     -   Always (Filter expression is ignored)
@@ -17,6 +21,7 @@ As of the events node, its checked on input or cronjob. The msg.payload contains
         -     summary
         -     description
         -     attendee
+        -     location
         -     category
         -     start date
         -     end date   
@@ -42,7 +47,7 @@ As of the events node, its checked on input or cronjob. The msg.payload contains
     eventStart: "2021-07-05T05:50:00.000+02:00"
     eventEnd: "2021-07-05T06:30:00.000+02:00"    
     ```    
--   "Cron": Similar to "Check every", but much more configurable. It's a cron expression, how often the calendar is checked for new upcoming events. If Cron is defined, it wins against "Check every". <i>Empty value to disable.</i>
+-   
 
 ### OUTPUT
 
